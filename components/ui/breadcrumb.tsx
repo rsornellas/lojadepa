@@ -1,5 +1,5 @@
-import { ChevronRight, Home } from 'lucide-react'
 import Link from 'next/link'
+import { ChevronRight, Home } from 'lucide-react'
 
 interface BreadcrumbItem {
   label: string
@@ -12,50 +12,21 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="flex items-center space-x-2 text-sm text-muted-foreground mb-6"
-    >
-      {/* Structured Data for Breadcrumb */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://lojadepa.com.br"
-              },
-              ...items.map((item, index) => ({
-                "@type": "ListItem",
-                "position": index + 2,
-                "name": item.label,
-                "item": item.href ? `https://lojadepa.com.br${item.href}` : undefined
-              }))
-            ]
-          })
-        }}
-      />
-
-      <Link
-        href="/"
+    <nav className="flex items-center space-x-1 text-sm text-muted-foreground mb-8" aria-label="Breadcrumb">
+      <Link 
+        href="/" 
         className="flex items-center hover:text-foreground transition-colors"
-        aria-label="Voltar para página inicial"
+        aria-label="Página inicial"
       >
         <Home className="w-4 h-4" />
-        <span className="sr-only">Home</span>
       </Link>
-
+      
       {items.map((item, index) => (
-        <div key={index} className="flex items-center space-x-2">
-          <ChevronRight className="w-4 h-4" />
-          {item.href && index < items.length - 1 ? (
-            <Link
-              href={item.href}
+        <div key={index} className="flex items-center space-x-1">
+          <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+          {item.href ? (
+            <Link 
+              href={item.href} 
               className="hover:text-foreground transition-colors"
             >
               {item.label}

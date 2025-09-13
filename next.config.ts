@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   // Enable experimental features for better performance
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled due to missing critters dependency
   },
 
   // Image optimization for better Core Web Vitals
