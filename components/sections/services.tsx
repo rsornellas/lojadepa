@@ -22,42 +22,48 @@ const services = [
     title: "Migração para AWS",
     description: "Transição segura e eficiente da sua infraestrutura para a nuvem AWS com zero downtime.",
     features: ["Assessment completo", "Plano de migração", "Execução monitorada", "Otimização pós-migração"],
-    badge: "Mais Popular"
+    badge: "Mais Popular",
+    slug: "migracao-aws"
   },
   {
     icon: Zap,
     title: "Arquitetura Serverless",
     description: "Desenvolvimento de soluções serverless escaláveis usando Lambda, API Gateway e DynamoDB.",
     features: ["Lambda Functions", "API Gateway", "DynamoDB", "EventBridge"],
-    badge: "Inovador"
+    badge: "Inovador",
+    slug: "arquitetura-serverless"
   },
   {
     icon: Shield,
     title: "Segurança AWS",
     description: "Implementação de melhores práticas de segurança e compliance na sua infraestrutura.",
     features: ["IAM Policies", "Security Groups", "CloudTrail", "Config Rules"],
-    badge: "Essencial"
+    badge: "Essencial",
+    slug: "seguranca-aws"
   },
   {
     icon: BarChart3,
     title: "Otimização de Custos",
     description: "Análise e otimização dos seus gastos na AWS para máximo ROI.",
     features: ["Cost Explorer", "Reserved Instances", "Spot Instances", "Right Sizing"],
-    badge: "Economia"
+    badge: "Economia",
+    slug: "otimizacao-custos"
   },
   {
     icon: Server,
     title: "DevOps & CI/CD",
     description: "Automação completa do seu pipeline de desenvolvimento com AWS DevOps.",
     features: ["CodePipeline", "CodeBuild", "CodeDeploy", "CloudFormation"],
-    badge: "Automação"
+    badge: "Automação",
+    slug: "devops-cicd"
   },
   {
     icon: Database,
     title: "Bancos de Dados",
     description: "Configuração e otimização de bancos de dados RDS, DynamoDB e ElastiCache.",
     features: ["RDS Multi-AZ", "DynamoDB", "ElastiCache", "Aurora Serverless"],
-    badge: "Performance"
+    badge: "Performance",
+    slug: "bancos-dados"
   }
 ]
 
@@ -125,6 +131,9 @@ export function Services() {
                     <Button 
                       variant="ghost" 
                       className="w-full group-hover:bg-aws-orange/10 group-hover:text-aws-orange transition-all"
+                      onClick={() => {
+                        window.location.href = `/services/${service.slug}`
+                      }}
                     >
                       Saiba Mais
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
