@@ -161,7 +161,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-aws-orange/5 to-aws-orange-light/5">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-aws-orange/5 to-aws-orange-light/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[
@@ -174,13 +174,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <Cpu className="w-4 h-4 mr-2" />
               {service.badge}
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
               {service.title}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
               {service.detailedDescription}
             </p>
-            <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
                 <span>Implementação: 2-6 semanas</span>
@@ -199,25 +199,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Features Section */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Principais Características
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Recursos e funcionalidades incluídos neste serviço
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {service.features.map((feature, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="w-12 h-12 bg-aws-orange/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-6 h-6 text-aws-orange" />
+                <CardContent className="pt-4 sm:pt-6 p-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-aws-orange/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-aws-orange" />
                   </div>
-                  <h3 className="font-semibold text-foreground">{feature}</h3>
+                  <h3 className="font-semibold text-foreground text-sm sm:text-base">{feature}</h3>
                 </CardContent>
               </Card>
             ))}
@@ -226,22 +226,22 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-12 sm:py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Benefícios para seu Negócio
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Como este serviço pode transformar sua operação
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {service.benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-aws-orange flex-shrink-0 mt-1" />
-                <p className="text-foreground">{benefit}</p>
+              <div key={index} className="flex items-start gap-3 sm:gap-4">
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-aws-orange flex-shrink-0 mt-0.5 sm:mt-1" />
+                <p className="text-foreground text-sm sm:text-base leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>
@@ -249,31 +249,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Process Section */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Nosso Processo
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Como implementamos este serviço de forma estruturada
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {service.process.map((step, index) => (
               <Card key={index} className="relative">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 bg-aws-orange text-white rounded-full flex items-center justify-center font-bold">
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-aws-orange text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base flex-shrink-0">
                       {step.step}
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{step.title}</h3>
-                      <p className="text-sm text-aws-orange font-medium">{step.duration}</p>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-semibold text-foreground text-sm sm:text-base leading-tight">{step.title}</h3>
+                      <p className="text-xs sm:text-sm text-aws-orange font-medium">{step.duration}</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{step.description}</p>
                 </CardHeader>
               </Card>
             ))}
@@ -282,25 +282,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-12 sm:py-16 bg-muted/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Perguntas Frequentes
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground">
               Tire suas dúvidas sobre {service.title.toLowerCase()}
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {service.faq.map((item, index) => (
               <Card key={index} className="hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                <CardHeader className="p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3 leading-tight">
                     {item.question}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     {item.answer}
                   </p>
                 </CardHeader>
@@ -311,16 +311,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-aws-orange to-aws-orange-light">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-aws-orange to-aws-orange-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Globe className="w-16 h-16 text-white mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <Globe className="w-12 h-12 sm:w-16 sm:h-16 text-white mx-auto mb-4 sm:mb-6" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 leading-tight">
             Pronto para começar?
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-base sm:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
             Fale com nossos especialistas e descubra como podemos implementar {service.title.toLowerCase()} na sua empresa.
           </p>
-          <CTAButtons />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+            <CTAButtons />
+          </div>
         </div>
       </section>
     </main>
