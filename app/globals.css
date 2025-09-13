@@ -1,13 +1,49 @@
 @import "tailwindcss";
 
 :root {
+  /* AWS-inspired color palette */
+  --aws-orange: #FF9900;
+  --aws-orange-light: #FFB84D;
+  --aws-orange-dark: #E68800;
+  --aws-blue: #232F3E;
+  --aws-blue-light: #4A9EE0;
+  --aws-blue-dark: #1A252F;
+  
+  /* Neutral colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1E293B;
+  --muted: #F8FAFC;
+  --muted-foreground: #64748B;
+  --border: #E2E8F0;
+  --accent: #F1F5F9;
+  
+  /* Semantic colors */
+  --success: #10B981;
+  --success-light: #ECFDF5;
+  --destructive: #EF4444;
+  --warning: #F59E0B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  
+  --color-aws-orange: var(--aws-orange);
+  --color-aws-orange-light: var(--aws-orange-light);
+  --color-aws-orange-dark: var(--aws-orange-dark);
+  --color-aws-blue: var(--aws-blue);
+  --color-aws-blue-light: var(--aws-blue-light);
+  --color-aws-blue-dark: var(--aws-blue-dark);
+  
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +52,51 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --muted: #1e1e1e;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
+    --accent: #18181b;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--aws-orange);
+  outline-offset: 2px;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background-color: var(--aws-orange);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--aws-orange-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--aws-blue);
+  border: 2px solid var(--aws-blue);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--aws-blue);
+  color: white;
+  transform: translateY(-1px);
 }

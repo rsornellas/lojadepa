@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lojadepa.com.br/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block access to admin areas (if any in the future)
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow access to important pages
+Allow: /
+Allow: /servicos/
+Allow: /contato/
