@@ -20,8 +20,24 @@ export const metadata: Metadata = {
     template: "%s | Loja de Pá - Consultoria AWS Brasil"
   },
   description: "Consultoria especializada em AWS no Brasil. Seu crescimento começa com a ferramenta certa. Soluções serverless personalizadas, migração para cloud e otimização de custos. Consulta gratuita disponível.",
-  keywords: "consultoria aws brasil, migração aws, serverless, cloud computing, arquitetura aws, consultoria cloud, aws especialista",
-  authors: [{ name: "Loja de Pá" }],
+  keywords: [
+    "consultoria aws brasil",
+    "migração aws",
+    "serverless aws",
+    "cloud computing brasil",
+    "arquitetura aws",
+    "consultoria cloud",
+    "aws especialista",
+    "devops aws",
+    "segurança aws",
+    "otimização custos aws",
+    "bancos de dados aws",
+    "ci/cd aws",
+    "infraestrutura aws",
+    "aws migration",
+    "cloud migration brasil"
+  ],
+  authors: [{ name: "Loja de Pá", url: "https://lojadepa.com.br" }],
   creator: "Loja de Pá",
   publisher: "Loja de Pá",
   applicationName: "Loja de Pá",
@@ -31,6 +47,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://lojadepa.com.br'),
   alternates: {
     canonical: '/',
+    languages: {
+      'pt-BR': 'https://lojadepa.com.br',
+    },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.YANDEX_VERIFICATION,
+    yahoo: process.env.YAHOO_VERIFICATION,
   },
   openGraph: {
     title: "Loja de Pá - Consultoria AWS Brasil",
@@ -39,17 +63,21 @@ export const metadata: Metadata = {
     siteName: "Loja de Pá",
     locale: "pt_BR",
     type: "website",
+    countryName: "Brasil",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Loja de Pá - Consultoria AWS Brasil",
+        type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@lojadepa",
+    creator: "@lojadepa",
     title: "Loja de Pá - Consultoria AWS Brasil",
     description: "Consultoria especializada em AWS. Soluções serverless personalizadas para empresas brasileiras.",
     images: ["/og-image.jpg"],
@@ -57,13 +85,23 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'Loja de Pá',
+    'msapplication-TileColor': '#FF9900',
+    'msapplication-config': '/browserconfig.xml',
   },
 };
 

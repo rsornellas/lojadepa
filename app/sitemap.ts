@@ -1,35 +1,58 @@
 import { MetadataRoute } from 'next'
+import { getAllServices } from '../lib/services-data'
 
-// Service data for sitemap generation
-const services = [
-  'migracao-aws',
-  'arquitetura-serverless',
-  'seguranca-aws',
-  'otimizacao-custos',
-  'devops-cicd',
-  'bancos-dados'
-]
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://lojadepa.com.br'
+  const currentDate = new Date()
 
-  // Static pages
-  const staticPages = [
+  // Get all services dynamically
+  const services = await getAllServices()
+
+  // Static pages with SEO priorities
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 1,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/#servicos`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/#contato`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
   ]
 
-  // Dynamic service pages
-  const servicePages = services.map((slug) => ({
-    url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+  // Service pages with dynamic data
+  const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly',
     priority: 0.8,
   }))
 
-  return [...staticPages, ...servicePages]
+  // Blog/Content pages (for future expansion)
+  const contentPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/casos-de-sucesso`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+  ]
+
+  return [...staticPages, ...servicePages, ...contentPages]
 }
