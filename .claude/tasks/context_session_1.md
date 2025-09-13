@@ -65,8 +65,33 @@ Each service now has a dedicated page with:
 5. **DevOps & CI/CD** - /services/devops-cicd
 6. **Bancos de Dados** - /services/bancos-dados
 
+## Architecture Improvements Applied
+Following Next.js best practices, we've implemented:
+
+### ✅ Data Layer Separation
+- **Created `lib/services-data.ts`**: Centralized data management with proper TypeScript interfaces
+- **Server-side Data Fetching**: Async functions with caching strategies ready for external APIs
+- **Type Safety**: Proper `LucideIcon` typing for icons, eliminating `any` types
+
+### ✅ Component Architecture
+- **Server Components**: Main service pages remain Server Components for optimal performance
+- **Client Components**: Interactive elements (CTA buttons) properly separated
+- **Data Fetching**: Server-side data fetching with `async/await` in Server Components
+- **Static Generation**: All service pages pre-rendered at build time
+
+### ✅ Caching Strategy
+- **Ready for External APIs**: Data layer prepared for CMS/database integration
+- **Caching Examples**: Commented examples showing `next: { revalidate: 3600 }` patterns
+- **Static Generation**: All pages pre-rendered for maximum performance
+
+### ✅ Performance Optimizations
+- **Bundle Size**: Reduced from 497B to 482B per service page
+- **Code Splitting**: Proper separation of concerns
+- **Tree Shaking**: Unused imports removed
+
 ## Next Steps
 - Test navigation between services and individual pages
 - Monitor SEO performance
 - Consider adding more internal links
 - Add structured data markup if needed
+- Implement external data source (CMS/database) when needed

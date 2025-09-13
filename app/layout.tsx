@@ -15,12 +15,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Loja de Pá - Consultoria AWS Brasil | Migração Cloud & Serverless",
+  title: {
+    default: "Loja de Pá - Consultoria AWS Brasil | Migração Cloud & Serverless",
+    template: "%s | Loja de Pá - Consultoria AWS Brasil"
+  },
   description: "Consultoria especializada em AWS no Brasil. Seu crescimento começa com a ferramenta certa. Soluções serverless personalizadas, migração para cloud e otimização de custos. Consulta gratuita disponível.",
   keywords: "consultoria aws brasil, migração aws, serverless, cloud computing, arquitetura aws, consultoria cloud, aws especialista",
   authors: [{ name: "Loja de Pá" }],
   creator: "Loja de Pá",
   publisher: "Loja de Pá",
+  applicationName: "Loja de Pá",
+  generator: "Next.js",
+  category: "Technology",
+  classification: "Business",
   metadataBase: new URL('https://lojadepa.com.br'),
   alternates: {
     canonical: '/',
@@ -69,9 +76,16 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#FF9900" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//vercel.live" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

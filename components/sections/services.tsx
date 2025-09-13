@@ -15,7 +15,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
 import { Badge } from "../ui/badge"
 import { Button } from "../ui/button"
-
+// This could be moved to a separate hook or context in a larger app
 const services = [
   {
     icon: Cloud,
