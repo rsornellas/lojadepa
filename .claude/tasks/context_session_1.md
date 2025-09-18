@@ -128,8 +128,41 @@ Fixed mobile responsiveness issues across all service pages:
 - Better text wrapping and spacing
 - Improved call-to-action visibility
 
+## CTA Buttons Fix (Latest Update)
+Fixed the "Agendar Consulta Gratuita" (Schedule Free Consultation) buttons that were not working correctly:
+
+### ✅ Problem Identified
+- CTA buttons in service pages were trying to scroll to element with ID `contato` that only exists on the home page
+- This caused the buttons to not function when clicked from individual service pages
+
+### ✅ Solution Implemented
+- Updated `components/ui/cta-buttons.tsx` with smart navigation logic
+- Added `useRouter` hook from Next.js for programmatic navigation
+- Implemented conditional behavior:
+  - **Home page**: Scrolls smoothly to contact section (`#contato`)
+  - **Service pages**: Navigates to home page with contact hash (`/#contato`)
+
+### ✅ Testing Results
+- ✅ Home page: Button scrolls to contact section
+- ✅ Service pages: Button redirects to home page and scrolls to contact section
+- ✅ All CTA buttons now work consistently across all pages
+- ✅ User experience improved with proper navigation flow
+
+### ✅ Code Changes
+```typescript
+const handleScheduleConsultation = () => {
+  // Check if we're on the home page
+  if (window.location.pathname === '/') {
+    // If on home page, scroll to contact section
+    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    // If on service page, navigate to home page and then scroll to contact
+    router.push('/#contato')
+  }
+}
+```
+
 ## Next Steps
-- Test navigation between services and individual pages
 - Monitor SEO performance
 - Consider adding more internal links
 - Add structured data markup if needed
